@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "e0e2ff98-3ae5-49d7-8d5e-e9abf64be950",
+		"name": "studentTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20156621"
+	},
+	"item": [
+		{
+			"name": "Get the student record",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/studentEnrollment/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"studentEnrollment",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "8810234d-000e-4b41-80db-cedd456827b2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"isEnrolled\": true,\n  \"id\": \"5e44b832-0193-4207-a304-5c5726005f48\",\n  \"number\": 1,\n  \"classes\": {\n    \"class1\": \"Science\",\n    \"class2\": \"Math\",\n    \"class3\": \"Economics\"\n  },\n  \"name\": \"kkk Smith\",\n  \"dob\": \"01/01/2000\",\n  \"addressLine1\": \"1234 Test St\",\n  \"addressLine2\": null,\n  \"city\": \"San Diego\",\n  \"state\": \"CA\",\n  \"zip\": \"92129\",\n  \"phoneNumber\": \"111-111-1111\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/studentEnrollment/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"studentEnrollment",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the existing record",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"enrolled\": true,\n  \"number\": 1,\n  \"classes\": {\n    \"class1\": \"Science\",\n    \"class2\": \"Math\",\n    \"class3\": \"History\"\n  },\n  \"name\": \"Jane Doe2\",\n  \"dob\": \"01/01/2000\",\n  \"addressLine1\": \"123 Main St\",\n  \"addressLine2\": null,\n  \"city\": \"Anytown\",\n  \"state\": \"CA\",\n  \"zip\": \"12345\",\n  \"phoneNumber\": \"123-456-7890\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/studentEnrollment/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"studentEnrollment",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "8810234d-000e-4b41-80db-cedd456827b2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a record",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/studentEnrollment/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"studentEnrollment",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
